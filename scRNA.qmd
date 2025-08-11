@@ -1,0 +1,33 @@
+---
+title: "PBMCs scRNA-seq Analysis"
+author: "Magdalena Kossuth"
+format: html
+editor: visual
+---
+
+Data:
+
+<https://bioconductor.org/packages/release/data/experiment/vignettes/TENxPBMCData/inst/doc/TENxPBMCData.html>
+
+```{r, echo: FALSE}
+library(Seurat)
+library(SingleCellExperiment)
+library(TENxPBMCData)
+
+data <- TENxPBMCData("pbmc3k")
+seurat_object <- CreateSeuratObject(counts = data, project = "PBMC")
+
+```
+
+```{r}
+# Install and load required packages
+library(TENxPBMCData)
+library(SingleCellExperiment)
+library(Seurat)
+
+# Load the PBMC dataset
+data <- TENxPBMCData("pbmc3k")
+
+# Convert to Seurat object
+seurat_object <- CreateSeuratObject(counts = data, project = "PBMC")
+```
